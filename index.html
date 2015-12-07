@@ -1,294 +1,148 @@
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>David Barredo</title>
     <meta name="description" content="Pointless Banter">
 
     <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nprogress.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic">
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="canonical" href="http://localhost:2368/">
+    <link rel="stylesheet" type="text/css" href="assets/css/screen.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="http://dadat.github.io/">
     <meta name="referrer" content="origin">
     
     <meta property="og:site_name" content="David Barredo">
     <meta property="og:type" content="website">
     <meta property="og:title" content="David Barredo">
     <meta property="og:description" content="Pointless Banter">
-    <meta property="og:url" content="http://localhost:2368/">
+    <meta property="og:url" content="http://dadat.github.io/">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="David Barredo">
     <meta name="twitter:description" content="Pointless Banter">
-    <meta name="twitter:url" content="http://localhost:2368/">
+    <meta name="twitter:url" content="http://dadat.github.io/">
     
     <script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "Website",
     "publisher": "David Barredo",
-    "url": "http://localhost:2368/",
+    "url": "http://dadat.github.io/",
     "description": "Pointless Banter"
 }
     </script>
 
     <meta name="generator" content="Ghost 0.7">
-    <link rel="alternate" type="application/rss+xml" title="David Barredo" href="http://localhost:2368/rss/">
+    <link rel="alternate" type="application/rss+xml" title="David Barredo" href="http://dadat.github.io/rss/">
 </head>
-<body class="home-template">
+<body class="home-template nav-closed">
 
-    <div id="wrapper">
-        <header class="site-header">
-            <div class="container">
-                <div class="site-title-wrapper">
-                        <h1 class="site-title"><a class="js-ajax-link" title="David Barredo" href="http://localhost:2368">David Barredo</a></h1>
-
-                        <a class="button-square" href="http://localhost:2368/rss"><i class="fa fa-rss"></i></a>
-                </div>
-
-                <ul class="site-nav">
-                    <li class="site-nav-item"><a class="js-ajax-link" title="David Barredo" href="http://localhost:2368">Latest Post</a></li>
-                    <li class="site-nav-item"><a class="js-ajax-link js-show-index" title="David Barredo" href="http://localhost:2368">Browse Posts</a></li>
-
-                        <li class="site-nav-item"><a class="js-ajax-link" title="Home | David Barredo" href="http://localhost:2368/">Home</a></li>
-    <li class="site-nav-item"><a class="js-ajax-link" title="About | David Barredo" href="http://localhost:2368/another-new-post/">About</a></li>
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home nav-current" role="presentation"><a href="http://dadat.github.io/">Home</a></li>
+            <li class="nav-about" role="presentation"><a href="http://dadat.github.io/about">About</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="http://dadat.github.io/rss/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
 
 
-                </ul>
-            </div>
-        </header>
-    
-        <div id="ajax-container">
-            
-<div id="latest-post" class="container">
-<article class="post-container post">
-    <header class="post-header">
-        <h1 class="post-title">Running Ghost 0.7.2 on Windows</h1>
+    <div class="site-wrapper">
 
-        <p class="post-date">Published <time datetime="Mon Dec 07 2015 13:42:45 GMT+0800 (Malay Peninsula Standard Time)">December 7th 2015</time> <strong>by <a href="author/david/">David Barredo</a></strong></p>
-    </header>
-
-    <div class="post-content clearfix">
-
-        <p>It took me a few hours of tinkering with <em>ghost-0.7.2, node.js, python</em>, and finally <em>buster</em>, but deploying static sites created with ghost on Windows is finally easier.</p>
-
-<p>Since the only way to generate and deploy Ghost's static pages is with <a href="https://github.com/axitkhurana/buster">buster</a>, doing it in Windows 10 is a pain in the ass; buster was not written with Windows users in mind.</p>
-
-<h2 id="downloadingtheinstallers">Downloading the installers</h2>
-
-<p>First you will need the following:</p>
-
-<ul>
-<li><a href="https://git-for-windows.github.io/">Git Bash</a></li>
-<li><a href="https://nodejs.org/download/release/v4.2.0/">node.js</a></li>
-<li><a href="https://www.python.org/downloads/">Python</a> with version below 3.0</li>
-<li>pip - installed with either <a href="https://chocolatey.org/packages/pip">chocolatey</a> or pip 7.1.2 <a href="https://pip.pypa.io/en/stable/installing/">here</a></li>
-</ul>
-
-<h2 id="theprocess">The Process</h2>
-
-<p>Other people will have various ways of setting up their installation, so be sure to have at least a familiar understanding of command line and command line tools.</p>
-
-<p><strong>Step 1:</strong></p>
-
-<p>For Git Pages projects:</p>
-
-<p>Create a new repository called <strong>blog</strong>, add a branch called <em>"gh-pages"</em>. This will serve as your project page for Git Pages. It will look like <a href="http://username.github.io/blog/">http://username.github.io/blog/</a></p>
-
-<p>Open up git bash and clone your repository:</p>
-
-<pre><code>$ git clone https://github.com/username/blog.git
-</code></pre>
-
-<p>Check to see if the installations were successful by typing in your command line:</p>
-
-<pre><code>python --version
-</code></pre>
-
-<hr>
-
-<pre><code>node --version
-</code></pre>
-
-<hr>
-
-<pre><code>npm --version
-</code></pre>
-
-<p>If they output their respective versions, then the installation is complete. </p>
-
-<p>Download <a href="https://ghost.org/download/">Ghost</a> and extract it onto your desktop. Enter the newly created folder and open git bash.</p>
-
-<pre><code>$ npm install
-</code></pre>
-
-<p>Let ghost install its packages, this will be in a folder called <em>node_modules</em>.</p>
-
-<pre><code>$ npm start
-</code></pre>
-
-<p>A local instance of your site will now be running on <a href="http://localhost:2368">http://localhost:2368</a>. <br>
-Now you can play with the settings on <a href="http://localhost:2368/ghost">http://localhost:2368/ghost</a></p>
-
-<h2 id="modifyingbusterforwindows">Modifying Buster for Windows</h2>
-
-<p>Buster is a tool for generating and deploying static pages. It can only be used while you are running a local instance of your site.</p>
-
-<p>Get buster here: <a href="https://github.com/axitkhurana/buster">https://github.com/axitkhurana/buster</a></p>
-
-<h2 id="important">IMPORTANT:</h2>
-
-<p>This build of buster is not compatible with Windows, here is a <em>buster.py</em> file which will fix routing and file name issues you might encounter.</p>
-
-<p><a href="https://github.com/amphipath/buster/blob/d67304251484d148abcceb2018902c6a3f51b322/buster/buster.py">Link to file</a></p>
-
-<p>Copy or download this and replace <em>buster.py</em> inside /buster/buster.</p>
-
-<p><strong>Optional</strong>: </p>
-
-<hr>
-
-<p>If you wish to route your local git repository with buster, change directory into /buster/buster and open up git bash. Type in:</p>
-
-<pre><code>$ python buster.py setup
-</code></pre>
-
-<p>Enter your repository's SSH link. It will look like this: git@github.com:username/blog.git</p>
-
-<p>Buster will then create a folder called <em>static</em>.</p>
-
-<hr>
-
-<p>If you do not with to do this for reasons like missing dependencies or broken links, then follow the next step.</p>
-
-<p>Make sure you have your local site up and running. Enter /buster/buster, open git bash and type in:</p>
-
-<pre><code>$ buster generate --domain=http://127.0.0.1:2368
-</code></pre>
-
-<p>This will generate your local site into html pages inside a new folder called "<em>static</em>".</p>
-
-<hr>
-
-<p>If you have followed the optional step, then you may deploy your site directly into your github repository. Input this on git bash while outside of your <em>static</em> folder:</p>
-
-<pre><code>$ buster deploy --dir=/yourfoldernamehere/
-</code></pre>
-
-<hr>
-
-<p>If you did not follow the optional steps, just copy and paste the contents of <em>static</em> into your repository folder and push onto GitHub.</p>
-
-<p>Check which files have been added, open up git bash inside your repo folder.</p>
-
-<pre><code>$ git status
-$ git add -A
-$ git commit -m "Commit message here"
-$ git push origin gh-pages
-</code></pre>
-
-<p>This will push all of your files into the gh-pages branch of your repository. Wait a few seconds for GitHub's servers to refresh and visit your Git Pages hosted site on: <a href="http://username.github.io/">http://username.github.io/</a><strong>repositoryname</strong></p>
-
-<p>Enjoy your new site. If you have a domain, just look up CNAME and domains on google.</p>
-    </div>
-
-    <footer class="post-footer clearfix">
-
-        <div class="share">
-            <a class="icon-twitter" href="http://twitter.com/share?text=Running%20Ghost%200.7.2%20on%20Windows&amp;url=http://localhost:2368/running-ghost-0-7-2-on-windows/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                <i class="fa fa-twitter"></i>
-                <span class="hidden">Twitter</span>
-            </a>
-
-            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/running-ghost-0-7-2-on-windows/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                <i class="fa fa-facebook"></i>
-                <span class="hidden">Facebook</span>
-            </a>
-
-            <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/running-ghost-0-7-2-on-windows/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-               <i class="fa fa-google-plus"></i>
-                <span class="hidden">Google+</span>
-            </a>
+        
+<header class="main-header no-cover">
+    <nav class="main-nav overlay clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">David Barredo</h1>
+            <h2 class="page-description">Pointless Banter</h2>
         </div>
-    </footer>
-</article></div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="index.html#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+</header>
 
-<div id="post-index" class="container">
-    <ol class="post-list">
-            <li class="post-stub post">
-        <a class="js-ajax-link" title="Running Ghost 0.7.2 on Windows | David Barredo" href="running-ghost-0-7-2-on-windows/">
-            <h4 class="post-stub-title">Running Ghost 0.7.2 on Windows</h4>
+<main id="content" class="content" role="main">
 
-            <time class="post-stub-date" datetime="Mon Dec 07 2015 13:42:45 GMT+0800 (Malay Peninsula Standard Time)">Published December 7th 2015</time>
-
-        </a>
-    </li>
-    <li class="post-stub post">
-        <a class="js-ajax-link" title="What is this about? | David Barredo" href="another-new-post/">
-            <h4 class="post-stub-title">What is this about?</h4>
-
-            <time class="post-stub-date" datetime="Thu Dec 03 2015 15:02:40 GMT+0800 (Malay Peninsula Standard Time)">Published December 3rd 2015</time>
-
-        </a>
-    </li>
-    <li class="post-stub post">
-        <a class="js-ajax-link" title="Introduction to Ghost | David Barredo" href="introduction-to-ghost/">
-            <h4 class="post-stub-title">Introduction to Ghost</h4>
-
-            <time class="post-stub-date" datetime="Thu Dec 03 2015 13:09:02 GMT+0800 (Malay Peninsula Standard Time)">Published December 3rd 2015</time>
-
-        </a>
-    </li>
-    <li class="post-stub post tag-getting-started">
-        <a class="js-ajax-link" title="Welcome to Ghost | David Barredo" href="welcome-to-ghost/">
-            <h4 class="post-stub-title">Welcome to Ghost</h4>
-
-            <time class="post-stub-date" datetime="Thu Dec 03 2015 13:07:06 GMT+0800 (Malay Peninsula Standard Time)">Published December 3rd 2015</time>
-
-        </a>
-    </li>
-    </ol>
-
-    <div class="post-navigation">
-        <nav class="pagination" role="navigation">
+    <div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
     <span class="page-number">Page 1 of 1</span>
 </nav>
-    </div>
 </div>
-        </div>
+
+<article class="post tag-tutorial">
+    <header class="post-header">
+        <h2 class="post-title"><a href="running-ghost-0-7-2-on-windows.3">Running Ghost 0.7.2 on Windows</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>It took me a few hours of tinkering with ghost-0.7.2, node.js, python, and finally buster, but deploying static sites created with ghost on <a class="read-more" href="running-ghost-0-7-2-on-windows.3">»</a></p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="http://www.gravatar.com/avatar/71cff47e2ee55b4b7013d81cef5a41bd?s=250&amp;d=mm&amp;r=x" alt="David Barredo" nopin="nopin">
+        <a href="author/david/">David Barredo</a>
+         on <a href="tag/tutorial/">Tutorial</a>
+        <time class="post-date" datetime="2015-12-07">07 December 2015</time>
+    </footer>
+</article>
+<article class="post tag-about">
+    <header class="post-header">
+        <h2 class="post-title"><a href="about/">What is this about?</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>I'm building this place to be my new Captain's Log. I had an old one at my test site. Probably a few movie or game reviews <a class="read-more" href="about/">»</a></p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="http://www.gravatar.com/avatar/71cff47e2ee55b4b7013d81cef5a41bd?s=250&amp;d=mm&amp;r=x" alt="David Barredo" nopin="nopin">
+        <a href="author/david/">David Barredo</a>
+         on <a href="tag/about/">About</a>
+        <time class="post-date" datetime="2015-12-03">03 December 2015</time>
+    </footer>
+</article>
+<article class="post tag-introduction">
+    <header class="post-header">
+        <h2 class="post-title"><a href="introduction-to-ghost/">Introduction to Ghost</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>An idea popped up when I tried out GitHub Pages.  "Why don't I host my blog on it?", I said. First one I tried out was <a class="read-more" href="introduction-to-ghost/">»</a></p>
+    </section>
+    <footer class="post-meta">
+        <img class="author-thumb" src="http://www.gravatar.com/avatar/71cff47e2ee55b4b7013d81cef5a41bd?s=250&amp;d=mm&amp;r=x" alt="David Barredo" nopin="nopin">
+        <a href="author/david/">David Barredo</a>
+         on <a href="tag/introduction/">Introduction</a>
+        <time class="post-date" datetime="2015-12-03">03 December 2015</time>
+    </footer>
+</article>
+
+<nav class="pagination" role="navigation">
+    <span class="page-number">Page 1 of 1</span>
+</nav>
+
+</main>
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="http://localhost:2368">David Barredo</a> © 2015</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="site-title-wrapper">
-                <h1 class="site-title"><a class="js-ajax-link" title="David Barredo" href="http://localhost:2368">David Barredo</a></h1>
-
-                <a class="button-square button-jump-top js-jump-top" href="index.html#"><i class="fa fa-angle-up"></i></a>
-            </div>
-
-            <p class="footer-copyright">© 2015 / Published with <a href="https://ghost.org">Ghost</a> / <a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></p>
-        </div>
-    </footer>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     
 
-    <script type="text/javascript">  
-    if (typeof jQuery == 'undefined') {
-        document.write('<script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></'+'script>');
-    }
-    </script>
-
-    <script type="text/javascript" src="assets/js/jquery.history.js"></script>
-    <script type="text/javascript" src="assets/js/nprogress.js"></script>
     <script type="text/javascript" src="assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="assets/js/scripts.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
 
 </body>
