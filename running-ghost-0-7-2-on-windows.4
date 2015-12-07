@@ -1,36 +1,37 @@
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>Running Ghost 0.7.2 on Windows</title>
-    <meta name="description" content="">
+    <meta name="description" content="" />
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css@v=755ea7f5fb" />
+    <link rel="stylesheet" type="text/css" href="assets/css/screen.css@v=755ea7f5fb" />
 
     
 
-    <link rel="canonical" href="http://localhost:2368/running-ghost-0-7-2-on-windows/">
-    <meta name="referrer" content="origin">
+    <link rel="canonical" href="http://localhost:2368/running-ghost-0-7-2-on-windows/" />
+    <meta name="referrer" content="origin" />
     
-    <meta property="og:site_name" content="David Barredo">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Running Ghost 0.7.2 on Windows">
-    <meta property="og:description" content="It took me a few hours of tinkering with ghost-0.7.2, node.js, python, and finally buster, but deploying static sites created with ghost on Windows is finally easier. Since the only way to generate and deploy Ghost's static...">
-    <meta property="og:url" content="http://localhost:2368/running-ghost-0-7-2-on-windows/">
-    <meta property="article:published_time" content="2015-12-07T05:42:45.831Z">
-    <meta property="article:modified_time" content="2015-12-07T06:07:29.888Z">
-    <meta property="article:tag" content="Tutorial">
+    <meta property="og:site_name" content="David Barredo" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Running Ghost 0.7.2 on Windows" />
+    <meta property="og:description" content="It took me a few hours of tinkering with ghost-0.7.2, node.js, python, and finally buster, but deploying static sites created with ghost on Windows is finally easier. Since the only way to generate and deploy Ghost&#x27;s static..." />
+    <meta property="og:url" content="http://localhost:2368/running-ghost-0-7-2-on-windows/" />
+    <meta property="article:published_time" content="2015-12-07T05:42:45.831Z" />
+    <meta property="article:modified_time" content="2015-12-07T06:07:29.888Z" />
+    <meta property="article:tag" content="Tutorial" />
     
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Running Ghost 0.7.2 on Windows">
-    <meta name="twitter:description" content="It took me a few hours of tinkering with ghost-0.7.2, node.js, python, and finally buster, but deploying static sites created with ghost on Windows is finally easier. Since the only way to generate and deploy Ghost's static...">
-    <meta name="twitter:url" content="http://localhost:2368/running-ghost-0-7-2-on-windows/">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Running Ghost 0.7.2 on Windows" />
+    <meta name="twitter:description" content="It took me a few hours of tinkering with ghost-0.7.2, node.js, python, and finally buster, but deploying static sites created with ghost on Windows is finally easier. Since the only way to generate and deploy Ghost&#x27;s static..." />
+    <meta name="twitter:url" content="http://localhost:2368/running-ghost-0-7-2-on-windows/" />
     
     <script type="application/ld+json">
 {
@@ -54,8 +55,8 @@
 }
     </script>
 
-    <meta name="generator" content="Ghost 0.7">
-    <link rel="alternate" type="application/rss+xml" title="David Barredo" href="http://localhost:2368/rss/">
+    <meta name="generator" content="Ghost 0.7" />
+    <link rel="alternate" type="application/rss+xml" title="David Barredo" href="http://localhost:2368/rss/" />
 </head>
 <body class="post-template tag-tutorial">
 
@@ -71,7 +72,7 @@
 
 
         <header>
-        <div class="post-meta tags">Posted in <a href="../tag/tutorial/">Tutorial</a></div>
+        <div class="post-meta tags">Posted in <a href="tag/tutorial/index.html">Tutorial</a></div>
         <h1 class="post-title">Running Ghost 0.7.2 on Windows</h1>
         <div class="post-meta"><time datetime="2015-12-07">Monday, December 07, 2015</time></div>
         </header>
@@ -112,12 +113,12 @@
 <pre><code>python --version
 </code></pre>
 
-<hr>
+<hr />
 
 <pre><code>node --version
 </code></pre>
 
-<hr>
+<hr />
 
 <pre><code>npm --version
 </code></pre>
@@ -134,7 +135,7 @@
 <pre><code>$ npm start
 </code></pre>
 
-<p>A local instance of your site will now be running on <a href="http://localhost:2368">http://localhost:2368</a>. <br>
+<p>A local instance of your site will now be running on <a href="http://localhost:2368">http://localhost:2368</a>. <br />
 Now you can play with the settings on <a href="http://localhost:2368/ghost">http://localhost:2368/ghost</a></p>
 
 <h2 id="modifyingbusterforwindows">Modifying Buster for Windows</h2>
@@ -153,7 +154,7 @@ Now you can play with the settings on <a href="http://localhost:2368/ghost">http
 
 <p><strong>Optional</strong>: </p>
 
-<hr>
+<hr />
 
 <p>If you wish to route your local git repository with buster, change directory into /buster/buster and open up git bash. Type in:</p>
 
@@ -164,7 +165,7 @@ Now you can play with the settings on <a href="http://localhost:2368/ghost">http
 
 <p>Buster will then create a folder called <em>static</em>.</p>
 
-<hr>
+<hr />
 
 <p>If you do not with to do this for reasons like missing dependencies or broken links, then follow the next step.</p>
 
@@ -175,14 +176,14 @@ Now you can play with the settings on <a href="http://localhost:2368/ghost">http
 
 <p>This will generate your local site into html pages inside a new folder called "<em>static</em>".</p>
 
-<hr>
+<hr />
 
 <p>If you have followed the optional step, then you may deploy your site directly into your github repository. Input this on git bash while outside of your <em>static</em> folder:</p>
 
 <pre><code>$ buster deploy --dir=/yourfoldernamehere/
 </code></pre>
 
-<hr>
+<hr />
 
 <p>If you did not follow the optional steps, just copy and paste the contents of <em>static</em> into your repository folder and push onto GitHub.</p>
 
@@ -201,13 +202,16 @@ $ git push origin gh-pages
 
         <section class="share">
             <p class="info prompt">Share this post</p>
-            <a href="http://twitter.com/share?text=Running%20Ghost%200.7.2%20on%20Windows&amp;url=http://localhost:2368/running-ghost-0-7-2-on-windows/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <a href="http://twitter.com/share?text=Running Ghost 0.7.2 on Windows&url=http://localhost:2368/running-ghost-0-7-2-on-windows/"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span>
             </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/running-ghost-0-7-2-on-windows/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/running-ghost-0-7-2-on-windows/"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                 <i class="fa fa-2x fa-fw fa-facebook-square"></i> <span class="hidden">Facebook</span>
             </a>
-            <a href="https://plus.google.com/share?url=http://localhost:2368/running-ghost-0-7-2-on-windows/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            <a href="https://plus.google.com/share?url=http://localhost:2368/running-ghost-0-7-2-on-windows/"
+               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                 <i class="fa fa-2x fa-fw fa-google-plus-square"></i> <span class="hidden">Google+</span>
             </a>
         </section>
@@ -215,7 +219,7 @@ $ git push origin gh-pages
         <footer class="post-footer">
 
             <section class="author">
-                <div class="authorimage" style="background: url(../content/images/2015/12/pwZUpPA-1.jpg)"></div>
+                <div class="authorimage" style="background: url(content/images/2015/12/pwZUpPA-1.jpg)"></div>
                 <p class="attr">Author</p>
                 <h4><a href="http://barredo.co">David Barredo</a></h4>
                 <p class="bio"></p>
@@ -232,7 +236,7 @@ $ git push origin gh-pages
 
     <footer class="site-footer">
         <div class="inner">
-            <section class="copyright">© 2015 <a href="../">David Barredo</a>. All rights reserved.</section>
+            <section class="copyright">&copy; 2015 <a href="index.html">David Barredo</a>. All rights reserved.</section>
             <section>Vapor theme by <a href="http://sethlilly.com/">Seth Lilly</a></section>
             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org/"><span class="hidden">Ghost</span></a></section>
         </div>
@@ -240,6 +244,7 @@ $ git push origin gh-pages
 
     
 
-    <script type="text/javascript" src="../assets/js/index.js"></script>
+    <script type="text/javascript" src="assets/js/index.js@v=755ea7f5fb"></script>
 
 </body>
+</html>
