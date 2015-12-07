@@ -1,0 +1,206 @@
+<channel><title></title><description></description><link>http://localhost:2368/<generator>Ghost 0.7</generator><lastbuilddate>Mon, 07 Dec 2015 05:54:21 GMT</lastbuilddate><link href="http://localhost:2368/author/david/rss/" rel="self" type="application/rss+xml"><ttl>60</ttl><item><title></title><description>It took me a few hours of tinkering with <em>ghost-0.7.2, node.js, python</em>, and finally <em>buster</em>, but deploying static sites created with ghost on Windows is finally easier.
+
+<p>Since the only way to generate and deploy Ghost's static pages is with <a href="https://github.com/axitkhurana/buster">buster</a>, doing it in Windows 10 is</p>]]&gt;</description><link>http://localhost:2368/running-ghost-0-7-2-on-windows/<guid ispermalink="false">d415e2b6-ac53-4f9e-9c1d-a29d6f2e1c33</guid><creator></creator><pubdate>Mon, 07 Dec 2015 05:42:45 GMT</pubdate><encoded>It took me a few hours of tinkering with <em>ghost-0.7.2, node.js, python</em>, and finally <em>buster</em>, but deploying static sites created with ghost on Windows is finally easier.
+
+<p>Since the only way to generate and deploy Ghost's static pages is with <a href="https://github.com/axitkhurana/buster">buster</a>, doing it in Windows 10 is a pain in the ass; buster was not written with Windows users in mind.</p>
+
+<h2 id="downloadingtheinstallers">Downloading the installers</h2>
+
+<p>First you will need the following:</p>
+
+<ul>
+<li><a href="https://git-for-windows.github.io/">Git Bash</a></li>
+<li><a href="https://nodejs.org/download/release/v4.2.0/">node.js</a></li>
+<li><a href="https://www.python.org/downloads/">Python</a> with version below 3.0</li>
+<li>pip - installed with either <a href="https://chocolatey.org/packages/pip">chocolatey</a> or pip 7.1.2 <a href="https://pip.pypa.io/en/stable/installing/">here</a></li>
+</ul>
+
+<h2 id="theprocess">The Process</h2>
+
+<p>Other people will have various ways of setting up their installation, so be sure to have at least a familiar understanding of command line and command line tools.</p>
+
+<p><strong>Step 1:</strong></p>
+
+<p>For Git Pages projects:</p>
+
+<p>Create a new repository called <strong>blog</strong>, add a branch called <em>"gh-pages"</em>. This will serve as your project page for Git Pages. It will look like <a href="http://username.github.io/blog/">http://username.github.io/blog/</a></p>
+
+<p>Open up git bash and clone your repository:</p>
+
+<pre><code>$ git clone https://github.com/username/blog.git
+</code></pre>
+
+<p>Check to see if the installations were successful by typing in your command line:</p>
+
+<pre><code>python --version
+</code></pre>
+
+<hr>
+
+<pre><code>node --version
+</code></pre>
+
+<hr>
+
+<pre><code>npm --version
+</code></pre>
+
+<p>If they output their respective versions, then the installation is complete. </p>
+
+<p>Download <a href="https://ghost.org/download/">Ghost</a> and extract it onto your desktop. Enter the newly created folder and open git bash.</p>
+
+<pre><code>$ npm install
+</code></pre>
+
+<p>Let ghost install its packages, this will be in a folder called <em>node_modules</em>.</p>
+
+<pre><code>$ npm start
+</code></pre>
+
+<p>A local instance of your site will now be running on <a href="http://localhost:2368">http://localhost:2368</a>. <br>
+Now you can play with the settings on <a href="http://localhost:2368/ghost">http://localhost:2368/ghost</a></p>
+
+<h2 id="modifyingbusterforwindows">Modifying Buster for Windows</h2>
+
+<p>Buster is a tool for generating and deploying static pages. It can only be used while you are running a local instance of your site.</p>
+
+<p>Get buster here: <a href="https://github.com/axitkhurana/buster">https://github.com/axitkhurana/buster</a></p>
+
+<h2 id="important">IMPORTANT:</h2>
+
+<p>This build of buster is not compatible with Windows, here is a <em>buster.py</em> file which will fix routing and file name issues you might encounter.</p>
+
+<p><a href="https://github.com/amphipath/buster/blob/d67304251484d148abcceb2018902c6a3f51b322/buster/buster.py">Link to file</a></p>
+
+<p>Copy or download this and replace <em>buster.py</em> inside /buster/buster.</p>
+
+<p><strong>Optional</strong>: </p>
+
+<hr>
+
+<p>If you wish to route your local git repository with buster, change directory into /buster/buster and open up git bash. Type in:</p>
+
+<pre><code>$ python buster.py setup
+</code></pre>
+
+<p>Enter your repository's SSH link. It will look like this: git@github.com:username/blog.git</p>
+
+<p>Buster will then create a folder called <em>static</em>.</p>
+
+<hr>
+
+<p>If you do not with to do this for reasons like missing dependencies or broken links, then follow the next step.</p>
+
+<p>Make sure you have your local site up and running. Enter /buster/buster, open git bash and type in:</p>
+
+<pre><code>$ buster generate --domain=http://127.0.0.1:2368
+</code></pre>
+
+<p>This will generate your local site into html pages inside a new folder called "<em>static</em>".</p>
+
+<hr>
+
+<p>If you have followed the optional step, then you may deploy your site directly into your github repository. Input this on git bash while outside of your <em>static</em> folder:</p>
+
+<pre><code>$ buster deploy --dir=/yourfoldernamehere/
+</code></pre>
+
+<hr>
+
+<p>If you did not follow the optional steps, just copy and paste the contents of <em>static</em> into your repository folder and push onto GitHub.</p>
+
+<p>Check which files have been added, open up git bash inside your repo folder.</p>
+
+<pre><code>$ git status
+$ git add -A
+$ git commit -m "Commit message here"
+$ git push origin gh-pages
+</code></pre>
+
+<p>This will push all of your files into the gh-pages branch of your repository. Wait a few seconds for GitHub's servers to refresh and visit your Git Pages hosted site on: <a href="http://username.github.io/">http://username.github.io/</a><strong>repositoryname</strong></p>
+
+<p>Enjoy your new site. If you have a domain, just look up CNAME and domains on google.</p>]]&gt;</encoded></item><item><title></title><description>I'm building this place to be my new Captain's Log. I had an old one at my <a href="http://cesecrous.jhost.org/">test site</a>. Probably a few movie or game reviews every other day as well.]]&gt;</description><link>http://localhost:2368/another-new-post/<guid ispermalink="false">73399715-75b3-4a9c-a58b-fc9ba8613e19</guid><creator></creator><pubdate>Thu, 03 Dec 2015 07:02:40 GMT</pubdate><encoded>I'm building this place to be my new Captain's Log. I had an old one at my <a href="http://cesecrous.jhost.org/">test site</a>. Probably a few movie or game reviews every other day as well.]]&gt;</encoded></item><item><title></title><description>An idea popped up when I tried out GitHub Pages. <br>
+"<em>Why don't I host my blog on it</em>?", I said. First one I tried out was Jekyll - written in Ruby, this thing had a ton of documentation ready for deployment. With one major problem:
+
+<p>It is not native to</p>]]&gt;</description><link>http://localhost:2368/introduction-to-ghost/<guid ispermalink="false">d4272fed-c80b-47c5-806b-823d251e2b30</guid><creator></creator><pubdate>Thu, 03 Dec 2015 05:09:02 GMT</pubdate><encoded>An idea popped up when I tried out GitHub Pages. <br>
+"<em>Why don't I host my blog on it</em>?", I said. First one I tried out was Jekyll - written in Ruby, this thing had a ton of documentation ready for deployment. With one major problem:
+
+<p>It is not native to Windows(which I am unfortunate enough to be using).</p>
+
+<p>Next up on my list was Hexo. It had plenty of themes ready, and the community was alive, but I could not place my finger on what was bothering me about it. Installation was quick, although it seemed too easy. Easy is fine, but when you're on Windows, you will know that easy comes at a price.</p>
+
+<pre><code>npm install hexo-cli -g
+hexo init blog
+cd blog
+npm install
+hexo server
+</code></pre>
+
+<p>A few minutes after installation, the problems had begun.</p>
+
+<p><a href="http://localhost:2368/introduction-to-ghost/dadat.github.io/blog/4/">Continuation...</a></p>]]&gt;</encoded></item><item><title></title><description>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list]]&gt;</description><link>http://localhost:2368/welcome-to-ghost/<guid ispermalink="false">a6f58686-458c-40aa-9fe2-a26597cc6e26</guid><category></category><creator></creator><pubdate>Thu, 03 Dec 2015 05:07:06 GMT</pubdate><encoded>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at <code>&lt;your blog URL&gt;/ghost/</code>. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!
+
+<h2 id="gettingstarted">Getting Started</h2>
+
+<p>Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!</p>
+
+<p>Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use <em>shortcuts</em> to <strong>style</strong> your content. For example, a list:</p>
+
+<ul>
+<li>Item number one</li>
+<li>Item number two
+<ul><li>A nested item</li></ul></li>
+<li>A final item</li>
+</ul>
+
+<p>or with numbers!</p>
+
+<ol>
+<li>Remember to buy some milk  </li>
+<li>Drink the milk  </li>
+<li>Tweet that I remembered to buy the milk, and drank it</li>
+</ol>
+
+<h3 id="links">Links</h3>
+
+<p>Want to link to a source? No problem. If you paste in a URL, like <a href="http://ghost.org">http://ghost.org</a> - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to <a href="http://ghost.org">the Ghost website</a>. Neat.</p>
+
+<h3 id="whataboutimages">What about Images?</h3>
+
+<p>Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:</p>
+
+<p><img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo"></p>
+
+<p>Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:</p>
+
+<h3 id="quoting">Quoting</h3>
+
+<p>Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!</p>
+
+<blockquote>
+  <p>Ghost - Just a blogging platform</p>
+</blockquote>
+
+<h3 id="workingwithcode">Working with Code</h3>
+
+<p>Got a streak of geek? We've got you covered there, too. You can write inline <code>&lt;code&gt;</code> blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.</p>
+
+<pre><code>.awesome-thing {
+    display: block;
+    width: 100%;
+}
+</code></pre>
+
+<h3 id="readyforabreak">Ready for a Break?</h3>
+
+<p>Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.</p>
+
+<hr>
+
+<h3 id="advancedusage">Advanced Usage</h3>
+
+<p>There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.</p>
+
+<p><input type="text" placeholder="I'm an input field!"></p>
+
+<p>That should be enough to get you started. Have fun - and let us know what you think :)</p>]]&gt;</encoded></item></channel>
